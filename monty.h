@@ -42,7 +42,7 @@ extern stack_t top;
 
 /**Opcodes prototypes**/
 void push(stack_t **head, stack_t **top);
-stack_t pop();
+void pop(stack_t **top);
 void print(stack_t **head, stack_t **top);
 void pint(stack_t **top);
 void swap();
@@ -58,5 +58,4 @@ void rotl();
 void rotr();
 void stack();
 void queue();
-
 #endif
