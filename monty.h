@@ -37,12 +37,14 @@ typedef struct instruction_s
 
 
 /**Global variables**/
-extern 
+extern stack_t head;
+extern stack_t top;
 
 /**Opcodes prototypes**/
-void push(stack_t node);
+void push(stack_t **head, stack_t **top);
 stack_t pop();
-void print();
+void print(stack_t **head, stack_t **top);
+void pint(stack_t **top);
 void swap();
 void add();
 void nop();
