@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * print - Prints all items on the stack
@@ -11,9 +11,11 @@
 
 void print(stack_t **head, stack_t **top)
 {
-	while (top)
+	stack_t *current = *top;
+
+	while (current)
 	{
-		printf("%d\n", top->n);
-		top = top->prev;
+		printf("%d\n", current->n);
+		current = current->prev;
 	}
 }

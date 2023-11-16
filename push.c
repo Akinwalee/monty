@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * push - Pushes a new node to the top of the stack
@@ -13,6 +13,7 @@
 void push(stack_t **head, stack_t **top, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
+
 	if (!new)
 		return;
 
