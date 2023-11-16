@@ -11,5 +11,5 @@
 void pint(stack_t **top)
 {
 	if (*top)
-		print("%d\n", (*top)->n);
+		printf("%d\n", (*top)->n);
 }

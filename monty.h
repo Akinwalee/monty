@@ -1,4 +1,5 @@
-#ifndef
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,15 +42,15 @@ extern stack_t head;
 extern stack_t top;
 
 /**Opcodes prototypes**/
-void push(stack_t **head, stack_t **top);
+void push(stack_t **head, stack_t **top, int n);
 void pop(stack_t **top);
-void print(stack_t **head, stack_t **top);
+void print(stack_t **top);
 void pint(stack_t **top);
 void swap(stack_t **top);
 void add(stack_t **top);
-void nop(stack_t **top);
+void nop(void);
 void sub(stack_t **top);
-void div(stack_t **top);
+void divide(stack_t **top);
 void mul(stack_t **top);
 void mod(stack_t **top);
 void pchar(stack_t **top);

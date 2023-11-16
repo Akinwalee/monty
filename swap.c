@@ -2,7 +2,7 @@
 
 /**
  * swap - Swaps the top two items of the stack.
- * 
+ *
  * @top: Pointer to the top of the stack
  *
  * Return: void.

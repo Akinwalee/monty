@@ -1,4 +1,4 @@
-#include "monty.c"
+#include "monty.h"
 
 /**
  * pop - Pops an item from the the top of the stack
