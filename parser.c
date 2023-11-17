@@ -32,6 +32,11 @@ void parseOp(char *line, int line_num)
 				{
 					token = strtok(NULL, " \n");
 					val = strtol(token, &p, 10);
+					if (sizeof(val) != sizeof(int) || token == NULL)
+					{
+						fprintf(stderr, "L%d: usage: push integer.", line_num);
+						exit(EXIT_FAILURE);
+					}
 					push(val);
 					return;
 				}
@@ -41,12 +46,62 @@ void parseOp(char *line, int line_num)
 					return;
 				}
 				else if (!strcmp(token, "pint"))
+				{
 					pint();
-				return;
+					return;
+				}
+				else if (!strcmp(token, "pop"))
+				{
+					pop();
+					return;
+				}
+				else if (!strcmp(token, "swap"))
+				{
+					swap();
+					return;
+				}
+				else if (!strcmp(token, "add"))
+				{
+					add();
+					return;
+				}
+				else if (!strcmp(token, "nop"))
+				{
+					return;
+				}
+				else if (!strcmp(token, "sub"))
+				{
+					sub();
+					return;
+				}
+				else if (!strcmp(token, "div"))
+				{
+				 	divide();
+					return;
+				}
+				else if (!strcmp(token, "mul"))
+				{
+					mul();
+					return;
+				}
+				else if (!strcmp(token, "mod"))
+				{
+					mod();
+					return;
+				}
+				else if (!strcmp(token, "pchar"))
+				{
+					pchar();
+					return;
+				}
+				else if (!strcmp(token, "pstr"))
+				{
+					pstr();
+					return;
+				}
 			}
 
 		}
-		
 		printf("L%d: unknown instruction %s\n", line_num, token);
 		exit(EXIT_FAILURE);
 	}

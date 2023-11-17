@@ -5,9 +5,7 @@
  *
  * Return: 0 for Success 1 for failure
  */
-
 stack_t **top = NULL;
-
 int main(int argc, char **argv)
 {
 	FILE *file;
@@ -17,7 +15,7 @@ int main(int argc, char **argv)
 	top = malloc(sizeof(stack_t *));
 	*top = NULL;
 
-	if (argc != 2 )
+	if (argc != 2)
 	{
 		perror("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
@@ -28,7 +26,7 @@ int main(int argc, char **argv)
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	while (fgets(line, sizeof(line), file))

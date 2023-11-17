@@ -3,7 +3,6 @@
 /**
  * push - Pushes a new node to the top of the stack
  *
- * @head: Pointer to the head of the stack
  * @n: The data to add to the stack
  *
  * Return: Nothing.

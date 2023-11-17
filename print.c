@@ -3,14 +3,16 @@
 /**
  * print - Prints all items on the stack
  *
- * @top: Pointer to the top of the stack
  *
  * Return: void.
  */
 
-void print()
+void print(void)
 {
 	stack_t *current = *top;
+
+	if (top == NULL)
+		return;
 
 	while (current)
 	{
