@@ -4,13 +4,12 @@
  * push - Pushes a new node to the top of the stack
  *
  * @head: Pointer to the head of the stack
- * @top: Pointer to the top of the stack
  * @n: The data to add to the stack
  *
  * Return: Nothing.
  */
 
-void push(stack_t **head, stack_t **top, const int n)
+void push(stack_t **head, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 

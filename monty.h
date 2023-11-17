@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #define MAX 100
 
 /**
@@ -38,14 +40,16 @@ typedef struct instruction_s
 
 
 /**Global variables**/
-extern stack_t head;
-extern stack_t top;
+extern stack_t **top;
+
+/**Function Prototype**/
+void parseOp(char *line, int line_num, stack_t **head);
 
 /**Opcodes prototypes**/
-void push(stack_t **head, stack_t **top, int n);
+void push(stack_t **head, int n);
 void pop(stack_t **top);
-void print(stack_t **top);
-void pint(stack_t **top);
+void print();
+void pint();
 void swap(stack_t **top);
 void add(stack_t **top);
 void nop(void);
@@ -55,8 +59,8 @@ void mul(stack_t **top);
 void mod(stack_t **top);
 void pchar(stack_t **top);
 void pstr(stack_t **top);
-void rotl();
-void rotr();
-void stack();
-void queue();
+void rotl(stack_t **top);
+void rotr(stack_t **top);
+void stack(stack_t **top);
+void queue(stack_t **top);
 #endif

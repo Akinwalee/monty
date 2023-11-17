@@ -8,7 +8,7 @@
  * Return: void.
  */
 
-void print(stack_t **top)
+void print()
 {
 	stack_t *current = *top;
 

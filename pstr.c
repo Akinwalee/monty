@@ -10,10 +10,11 @@
 
 void pstr(stack_t **top)
 {
-	stack_t *current = *top
+	stack_t *current = *top;
+
 	while (current != NULL && current->n > 0 && current->n <= 127)
 	{
-		putchar((current->n);
+		putchar((current->n));
 		current = current->prev;
 	}
 	putchar('\n');
