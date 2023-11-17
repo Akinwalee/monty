@@ -47,12 +47,12 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "pint"))
 				{
-					pint();
+					pint(line_num);
 					return;
 				}
 				else if (!strcmp(token, "pop"))
 				{
-					pop();
+					pop(line_num);
 					return;
 				}
 				else if (!strcmp(token, "swap"))
