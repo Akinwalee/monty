@@ -43,24 +43,24 @@ typedef struct instruction_s
 extern stack_t **top;
 
 /**Function Prototype**/
-void parseOp(char *line, int line_num, stack_t **head);
+void parseOp(char *line, int line_num);
 
 /**Opcodes prototypes**/
-void push(stack_t **head, int n);
-void pop(stack_t **top);
+void push(int n);
+void pop();
 void print();
 void pint();
-void swap(stack_t **top);
-void add(stack_t **top);
+void swap();
+void add();
 void nop(void);
-void sub(stack_t **top);
-void divide(stack_t **top);
-void mul(stack_t **top);
-void mod(stack_t **top);
-void pchar(stack_t **top);
-void pstr(stack_t **top);
-void rotl(stack_t **top);
-void rotr(stack_t **top);
-void stack(stack_t **top);
-void queue(stack_t **top);
+void sub();
+void divide();
+void mul();
+void mod();
+void pchar();
+void pstr();
+void rotl();
+void rotr();
+void stack();
+void queue();
 #endif

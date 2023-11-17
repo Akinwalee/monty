@@ -9,7 +9,7 @@
  * Return: Nothing.
  */
 
-void push(stack_t **head, const int n)
+void push(const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
@@ -20,15 +20,8 @@ void push(stack_t **head, const int n)
 	new->prev = *top;
 	new->next = NULL;
 
-	if (*head == NULL)
-	{
-		*head = new;
-	}
-	else
-	{
-		if (*top != NULL)
-			(*top)->next = new;
-	}
+	if (*top != NULL)
+		(*top)->next = new;
 
 	*top = new;
 }
