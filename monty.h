@@ -50,7 +50,7 @@ void push(int n);
 void pop();
 void print(void);
 void pint();
-void swap(int);
+void swap();
 void add(int);
 void nop(void);
 void sub(int);

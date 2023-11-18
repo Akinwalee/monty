@@ -8,16 +8,10 @@
  * Return: void.
  */
 
-void swap(int line_num)
+void swap(void)
 {
 	stack_t *current = *top;
 	stack_t *second = (*top)->prev;
-
-	if (!top || (*top)->prev == NULL)
-	{
-		fprintf(stderr, "L%d: can't swap, stack too short", line_num);
-		exit(EXIT_FAILURE);
-	}
 
 	current->prev = second->prev;
 	second->next = current->next;
