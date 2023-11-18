@@ -18,6 +18,9 @@ fi
 # Find all .sh files in the specified directory and its subdirectories
 sh_files=$(find "$test_dir" -type f -name "*.sh" ! -name "runtest.sh")
 
+echo "Found the following test files:"
+echo "$sh_files"
+
 # Iterate through the .sh files and execute each one
 for test_file in $sh_files; do
     echo "Running test: $test_file"
