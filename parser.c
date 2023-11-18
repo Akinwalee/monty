@@ -138,7 +138,7 @@ void parseOp(char *line, int line_num)
 						exit(EXIT_FAILURE);
 					}
 
-					if (current->n == 0)
+					if ((*top)->n == 0)
 					{
 						fprintf(stderr, "L%d: division by zero.\n", line_num);
 						exit(EXIT_FAILURE);
