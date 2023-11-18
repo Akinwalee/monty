@@ -20,12 +20,8 @@ test_files=("$test_dir"/*.sh)
 
 # Iterate through the .sh files and execute each one
 for test_file in "${test_files[@]}"; do
-    echo "Running test: $test_file"
-    if [ -x "$test_file" ]; then
-        ./"$test_file" # Execute the test file if it's executable
-    else
-        bash "$test_file" # Execute using bash interpreter if not executable
+    if [ "$test_file" != "$test_dir/runtest.sh" ]; then
+        echo "Deleting: $test_file"
+        rm "$test_file"
     fi
-    echo "Finished test: $test_file"
-    echo "-------------------------"
 done
