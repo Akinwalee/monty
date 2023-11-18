@@ -9,21 +9,9 @@
  * Return: void.
  */
 
-void mod(int line_num)
+void mod()
 {
 	stack_t *current = *top;
-
-	if (!top || !(*top)->prev)
-	{
-		fprintf(stderr, "L%d: can't mod, stack too short.\n", line_num);
-		exit(EXIT_FAILURE);
-	}
-
-	if (current->n == 0)
-	{
-		fprintf(stderr, "L%d: division by zero.\n", line_num);
-		exit(EXIT_FAILURE);
-	}
 
 	current->prev->n %= current->n;
 	*top = current->prev;
