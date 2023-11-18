@@ -49,7 +49,7 @@ void parseOp(char *line, int line_num);
 void push(int n);
 void pop(int);
 void print(void);
-void pint(int);
+void pint();
 void swap(int);
 void add(int);
 void nop(void);

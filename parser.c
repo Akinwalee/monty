@@ -57,7 +57,7 @@ void parseOp(char *line, int line_num)
 						fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
 						exit(EXIT_FAILURE);
 					}
-					pint(line_num);
+					pint();
 					return;
 				}
 				else if (!strcmp(token, "pop"))

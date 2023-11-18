@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void pint(int line_num)
+void pint(void)
 {
 	printf("%d\n", (*top)->n);
 	return;
