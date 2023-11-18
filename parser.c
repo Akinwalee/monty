@@ -82,7 +82,12 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "add"))
 				{
-					add(line_num);
+					if (!*top || (*top)->prev == NULL)
+					{
+						fprintf(stderr, "L%d: can't add, stack too short.\n", line_num);
+						exit(EXIT_FAILURE);
+					}
+					add();
 					return;
 				}
 				else if (!strcmp(token, "nop"))
