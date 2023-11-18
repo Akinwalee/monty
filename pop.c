@@ -12,7 +12,6 @@ void pop(void)
 {
 	stack_t *current = *top;
 
-	printf("%d\n", (*top)->n);
 	*top = current->prev;
 	free(current);
 }
