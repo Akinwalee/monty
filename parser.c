@@ -97,22 +97,53 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "sub"))
 				{
-					sub(line_num);
+					if (!(*top) || !(*top)->prev)
+					{
+					fprintf(stderr, "L%d: can't sub, stack too short.\n", line_num);
+					exit(EXIT_FAILURE);
+					}
+					sub();
 					return;
 				}
 				else if (!strcmp(token, "div"))
 				{
-				 	divide(line_num);
+					if (!(*top) || (*top)->prev == NULL)
+					{
+						fprintf(stderr, "L%d: can't div, stack too short.\n", line_num);
+						exit(EXIT_FAILURE);
+					}
+					if ((*top)->n == 0)
+					{
+						fprintf(stderr, "L%d: division by zero.", line_num);
+						exit(EXIT_FAILURE);
+					}
+				 	divide();
 					return;
 				}
 				else if (!strcmp(token, "mul"))
 				{
-					mul(line_num);
+					if (!(*top) || !(*top)->prev)
+					{
+						fprintf(stderr, "L%d: can't div, stack too short.\n", line_num);
+						exit(EXIT_FAILURE);
+					}
+					mul();
 					return;
 				}
 				else if (!strcmp(token, "mod"))
 				{
-					mod(line_num);
+					if (!(*top) || !(*top)->prev)
+					{
+						fprintf(stderr, "L%d: can't mod, stack too short.\n", line_num);
+						exit(EXIT_FAILURE);
+					}
+
+					if (current->n == 0)
+					{
+						fprintf(stderr, "L%d: division by zero.\n", line_num);
+						exit(EXIT_FAILURE);
+					}
+					mod();
 					return;
 				}
 				else if (!strcmp(token, "pchar"))
