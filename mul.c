@@ -8,7 +8,7 @@
  * Return: void.
  */
 
-void mul(int line_num)
+void mul()
 {
 	stack_t *current = *top;
 
