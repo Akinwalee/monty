@@ -14,7 +14,6 @@ void push(const int n)
 
 	if (!new)
 		return;
-
 	new->n = n;
 	new->prev = *top;
 	new->next = NULL;

@@ -36,12 +36,13 @@ int main(int argc, char **argv)
 		parseOp(line, line_num);
 	}
 
-	while((*top)->prev)
+	while((*top) != NULL)
 	{
 		temp = *top;
 		*top = temp->prev;
 		free(temp);
 	}
+	free(top);
 
 	fclose(file);
 
