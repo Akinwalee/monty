@@ -10,7 +10,7 @@
 
 void pchar(int line_num)
 {
-	if (!top)
+	if (!*top)
 	{
 	 fprintf(stderr, "L%d: can't pchar, stack empty", line_num);
 	 exit(EXIT_FAILURE);
