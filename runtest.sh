@@ -15,13 +15,17 @@ if [ ! -d "$test_dir" ]; then
     exit 1
 fi
 
-# Get all .sh files in the specified directory
-test_files=("$test_dir"/*.sh)
+# Find all .sh files in the specified directory and its subdirectories
+sh_files=$(find "$test_dir" -type f -name "*.sh" ! -name "runtest.sh")
 
 # Iterate through the .sh files and execute each one
-for test_file in "${test_files[@]}"; do
-    if [ "$test_file" != "$test_dir/runtest.sh" ]; then
-        echo "Deleting: $test_file"
-        rm "$test_file"
+for test_file in $sh_files; do
+    echo "Running test: $test_file"
+    if [ -x "$test_file" ]; then
+        ./"$test_file" # Execute the test file if it's executable
+    else
+        bash "$test_file" # Execute using bash interpreter if not executable
     fi
+    echo "Finished test: $test_file"
+    echo "-------------------------"
 done
