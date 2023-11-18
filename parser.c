@@ -84,7 +84,7 @@ void parseOp(char *line, int line_num)
 				{
 					if (!*top || (*top)->prev == NULL)
 					{
-						fprintf(stderr, "L%d: can't add, stack too short.\n", line_num);
+						fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 					add();
@@ -99,7 +99,7 @@ void parseOp(char *line, int line_num)
 				{
 					if (!(*top) || !(*top)->prev)
 					{
-					fprintf(stderr, "L%d: can't sub, stack too short.\n", line_num);
+					fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
 					exit(EXIT_FAILURE);
 					}
 					sub();
@@ -109,12 +109,12 @@ void parseOp(char *line, int line_num)
 				{
 					if (!(*top) || (*top)->prev == NULL)
 					{
-						fprintf(stderr, "L%d: can't div, stack too short.\n", line_num);
+						fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 					if ((*top)->n == 0)
 					{
-						fprintf(stderr, "L%d: division by zero.\n", line_num);
+						fprintf(stderr, "L%d: division by zero\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 				 	divide();
@@ -124,7 +124,7 @@ void parseOp(char *line, int line_num)
 				{
 					if (!(*top) || !(*top)->prev)
 					{
-						fprintf(stderr, "L%d: can't div, stack too short.\n", line_num);
+						fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 					mul();
@@ -134,13 +134,13 @@ void parseOp(char *line, int line_num)
 				{
 					if (!(*top) || !(*top)->prev)
 					{
-						fprintf(stderr, "L%d: can't mod, stack too short.\n", line_num);
+						fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 
 					if ((*top)->n == 0)
 					{
-						fprintf(stderr, "L%d: division by zero.\n", line_num);
+						fprintf(stderr, "L%d: division by zero\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 					mod();
