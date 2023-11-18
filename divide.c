@@ -8,7 +8,7 @@
  * Return: void.
  */
 
-void divide(int line_num)
+void divide()
 {
 	stack_t *current = *top;
 
