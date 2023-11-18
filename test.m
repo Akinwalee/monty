@@ -1,3 +1,2 @@
-push 12
-push 0
-div
+push 98
+mul
