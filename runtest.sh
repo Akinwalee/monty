@@ -19,6 +19,7 @@ fi
 cd "$test_dir" || exit
 
 # Execute all .sh files except runtest.sh
+shopt -s nullglob
 for test_file in *.sh; do
     if [ "$test_file" != "runtest.sh" ]; then
         echo "Running test: $test_file"
