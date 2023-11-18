@@ -52,6 +52,11 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "pint"))
 				{
+					if (!(*top))
+					{
+						fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+						exit(EXIT_FAILURE);
+					}
 					pint(line_num);
 					return;
 				}

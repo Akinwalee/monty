@@ -10,11 +10,6 @@
 
 void pint(int line_num)
 {
-	if (*top)
-	{
-		printf("%d\n", (*top)->n);
-		return;
-	}
-	fprintf(stderr, "L%d: can't pint, stack empty", line_num);
-	exit(EXIT_FAILURE);
+	printf("%d\n", (*top)->n);
+	return;
 }
