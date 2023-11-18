@@ -31,8 +31,13 @@ void parseOp(char *line, int line_num)
 				if (!strcmp(token, "push"))
 				{
 					token = strtok(NULL, " \n");
+					if (token == NULL)
+					{
+						fprintf(stderr, "L%d: usage: push integer\n", line_num);
+						exit(EXIT_FAILURE);
+					}
 					val = strtol(token, &p, 10);
-					if (*p != '\0' || token == NULL)
+					if (*p != '\0')
 					{
 						fprintf(stderr, "L%d: usage: push integer\n", line_num);
 						exit(EXIT_FAILURE);
