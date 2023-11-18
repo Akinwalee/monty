@@ -15,20 +15,19 @@ if [ ! -d "$test_dir" ]; then
     exit 1
 fi
 
-# Find all .sh files in the specified directory and its subdirectories
-sh_files=$(find "$test_dir" -type f -name "*.sh" ! -name "runtest.sh")
+# Change directory to the test directory
+cd "$test_dir" || exit
 
-echo "Found the following test files:"
-echo "$sh_files"
-
-# Iterate through the .sh files and execute each one
-for test_file in $sh_files; do
-    echo "Running test: $test_file"
-    if [ -x "$test_file" ]; then
-        ./"$test_file" # Execute the test file if it's executable
-    else
-        bash "$test_file" # Execute using bash interpreter if not executable
+# Execute all .sh files except runtest.sh
+for test_file in *.sh; do
+    if [ "$test_file" != "runtest.sh" ]; then
+        echo "Running test: $test_file"
+        if [ -x "$test_file" ]; then
+            ./"$test_file" # Execute the test file if it's executable
+        else
+            bash "$test_file" # Execute using bash interpreter if not executable
+        fi
+        echo "Finished test: $test_file"
+        echo "-------------------------"
     fi
-    echo "Finished test: $test_file"
-    echo "-------------------------"
 done
