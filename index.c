@@ -11,14 +11,15 @@ int main(int argc, char **argv)
 	FILE *file;
 	char line[MAX];
 	int line_num = 0;
+	stack_t *temp;
 
 	top = malloc(sizeof(stack_t *));
 	*top = NULL;
 
 	if (argc != 2)
 	{
-		perror("USAGE: monty file\n");
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n");
+		return(EXIT_FAILURE);
 	}
 
 	file = fopen(argv[1], "r");
@@ -33,6 +34,13 @@ int main(int argc, char **argv)
 	{
 		line_num++;
 		parseOp(line, line_num);
+	}
+
+	while((*top)->prev)
+	{
+		temp = *top;
+		*top = temp->prev;
+		free(temp);
 	}
 
 	fclose(file);

@@ -9,10 +9,15 @@
  * Return: void.
  */
 
-void mod(stack_t **top)
+void mod(int line_num)
 {
 	stack_t *current = *top;
 
+	if (!top || !(*top)->prev)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short.\n", line_num);
+		exit(EXIT_FAILURE);
+	}
 	current->prev->n %= current->n;
 	*top = current->prev;
 	free(current);

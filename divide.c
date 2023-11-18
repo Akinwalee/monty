@@ -8,10 +8,14 @@
  * Return: void.
  */
 
-void divide(stack_t **top)
+void divide(int line_num)
 {
 	stack_t *current = *top;
-
+	
+	if (!top || (*top)->prev == NULL)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short.\n", line_num);
+	}
 	current->prev->n /= current->n;
 	*top = current->prev;
 	free(current);

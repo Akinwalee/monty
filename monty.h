@@ -47,20 +47,20 @@ void parseOp(char *line, int line_num);
 
 /**Opcodes prototypes**/
 void push(int n);
-void pop();
-void print();
-void pint();
-void swap();
-void add();
+void pop(int);
+void print(void);
+void pint(int);
+void swap(int);
+void add(int);
 void nop(void);
-void sub();
-void divide();
-void mul();
-void mod();
-void pchar();
-void pstr();
-void rotl();
-void rotr();
-void stack();
-void queue();
+void sub(int);
+void divide(int);
+void mul(int);
+void mod(int);
+void pchar(int);
+void pstr(void);
+void rotl(int);
+void rotr(int);
+void stack(int);
+void queue(int);
 #endif

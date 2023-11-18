@@ -57,12 +57,12 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "swap"))
 				{
-					swap();
+					swap(line_num);
 					return;
 				}
 				else if (!strcmp(token, "add"))
 				{
-					add();
+					add(line_num);
 					return;
 				}
 				else if (!strcmp(token, "nop"))
@@ -71,27 +71,27 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "sub"))
 				{
-					sub();
+					sub(line_num);
 					return;
 				}
 				else if (!strcmp(token, "div"))
 				{
-				 	divide();
+				 	divide(line_num);
 					return;
 				}
 				else if (!strcmp(token, "mul"))
 				{
-					mul();
+					mul(line_num);
 					return;
 				}
 				else if (!strcmp(token, "mod"))
 				{
-					mod();
+					mod(line_num);
 					return;
 				}
 				else if (!strcmp(token, "pchar"))
 				{
-					pchar();
+					pchar(line_num);
 					return;
 				}
 				else if (!strcmp(token, "pstr"))

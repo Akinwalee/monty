@@ -8,7 +8,7 @@
  * Return: void.
  */
 
-void pstr(stack_t **top)
+void pstr(void)
 {
 	stack_t *current = *top;
 

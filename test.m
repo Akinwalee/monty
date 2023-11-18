@@ -5,3 +5,5 @@ push 2
 push 4
 pop
 pall
+swap
+pall
