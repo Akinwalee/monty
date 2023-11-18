@@ -62,7 +62,12 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "pop"))
 				{
-					pop(line_num);
+					if (!(*top))
+					{
+						fprintf(stderr, "L%d: can't pop an empty stack\n", line_num);
+						exit(EXIT_FAILURE);
+					}
+					pop();
 					return;
 				}
 				else if (!strcmp(token, "swap"))

@@ -8,14 +8,10 @@
  * Return: The popped item.
  */
 
-void pop(int line_num)
+void pop(void)
 {
 	stack_t *current = *top;
-	
-	if (*top == NULL)
-	{
-		fprintf(stderr, "L%d: can't pop an empty stack.", line_num);
-	}
+
 	printf("%d\n", (*top)->n);
 	*top = current->prev;
 	free(current);

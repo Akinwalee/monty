@@ -47,7 +47,7 @@ void parseOp(char *line, int line_num);
 
 /**Opcodes prototypes**/
 void push(int n);
-void pop(int);
+void pop();
 void print(void);
 void pint();
 void swap(int);
