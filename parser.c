@@ -32,9 +32,9 @@ void parseOp(char *line, int line_num)
 				{
 					token = strtok(NULL, " \n");
 					val = strtol(token, &p, 10);
-					if (sizeof(val) != sizeof(int) || token == NULL)
+					if (*p != '\0' || token == NULL)
 					{
-						fprintf(stderr, "L%d: usage: push integer.", line_num);
+						fprintf(stderr, "L%d: usage: push integer\n", line_num);
 						exit(EXIT_FAILURE);
 					}
 					push(val);
@@ -100,9 +100,12 @@ void parseOp(char *line, int line_num)
 					return;
 				}
 			}
+			else
+			{
+				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
+				exit(EXIT_FAILURE);
+			}
 
 		}
-		printf("L%d: unknown instruction %s\n", line_num, token);
-		exit(EXIT_FAILURE);
 	}
 }

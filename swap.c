@@ -18,6 +18,7 @@ void swap(int line_num)
 		fprintf(stderr, "L%d: can't swap, stack too short", line_num);
 		exit(EXIT_FAILURE);
 	}
+
 	current->prev = second->prev;
 	second->next = current->next;
 	current->next = second;
