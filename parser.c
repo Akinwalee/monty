@@ -72,7 +72,7 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "swap"))
 				{
-					if (!top || (*top)->prev == NULL)
+					if (*top == NULL || (*top)->prev == NULL)
 					{
 						fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
 						exit(EXIT_FAILURE);
