@@ -67,6 +67,7 @@ void parseOp(char *line, int line_num)
 				}
 				else if (!strcmp(token, "nop"))
 				{
+					nop();
 					return;
 				}
 				else if (!strcmp(token, "sub"))
@@ -100,12 +101,8 @@ void parseOp(char *line, int line_num)
 					return;
 				}
 			}
-			else
-			{
-				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
-				exit(EXIT_FAILURE);
-			}
-
 		}
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
+		exit(EXIT_FAILURE);
 	}
 }
