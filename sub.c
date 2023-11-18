@@ -8,7 +8,7 @@
  * Return: void.
  */
 
-void sub(int line_num)
+void sub()
 {
 	stack_t *current = *top;
 
