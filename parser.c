@@ -19,7 +19,8 @@ void parseOp(char *line, int line_num)
 
 	while (isspace(*line))
 		line++;
-
+	if (line[0] == '#')
+		return;
 	token = strtok(line, " \n");
 
 	if (token)
@@ -90,7 +91,7 @@ void parseOp(char *line, int line_num)
 					add();
 					return;
 				}
-				else if (!strcmp(token, "nop") || !strcmp(token[0] == "#"))
+				else if (!strcmp(token, "nop"))
 				{
 					nop();
 					return;
