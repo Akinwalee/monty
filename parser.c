@@ -90,7 +90,7 @@ void parseOp(char *line, int line_num)
 					add();
 					return;
 				}
-				else if (!strcmp(token, "nop"))
+				else if (!strcmp(token, "nop") || !strcmp(token[0] == "#"))
 				{
 					nop();
 					return;
